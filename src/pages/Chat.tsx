@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Send, Share, User, Users, X } from 'lucide-react';
@@ -12,6 +11,12 @@ interface Message {
   text: string;
   timestamp: number;
   senderName: string;
+}
+
+interface UserData {
+  id: string;
+  username: string;
+  isActive: boolean;
 }
 
 const Chat = () => {
@@ -29,12 +34,13 @@ const Chat = () => {
   const [isScreenSharing, setIsScreenSharing] = useState(false);
   
   // Mock user data
-  const currentUser = {
+  const currentUser: UserData = {
     id: 'user-1',
-    username: 'You'
+    username: 'You',
+    isActive: true
   };
   
-  const mockUsers = [
+  const mockUsers: UserData[] = [
     { id: 'user-2', username: 'Alice', isActive: true },
     { id: 'user-3', username: 'Bob', isActive: true },
     { id: 'user-4', username: 'Carol', isActive: false }
