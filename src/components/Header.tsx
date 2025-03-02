@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -30,6 +29,7 @@ export const Header = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Chat', path: '/chat' },
+    { name: 'Launch', path: '/launch' },
     { name: 'Features', path: '#features' },
     { name: 'About', path: '#about' },
   ];

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import Statistics from '@/components/Statistics';
+import CountdownTimer from '@/components/CountdownTimer';
 import { ArrowRight, MessageCircle, Share, Shield, Zap } from 'lucide-react';
 
 const Index = () => {
@@ -31,12 +33,19 @@ const Index = () => {
     }
   ];
 
+  // Set the launch date to 30 days from now
+  const launchDate = new Date();
+  launchDate.setDate(launchDate.getDate() + 30);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       
       {/* Hero Section */}
       <Hero />
+      
+      {/* Statistics Section */}
+      <Statistics />
       
       {/* Features Section */}
       <section id="features" className="py-24 px-6 md:px-10 bg-secondary/30">
@@ -64,6 +73,13 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      {/* Countdown Timer Section */}
+      <CountdownTimer 
+        targetDate={launchDate}
+        title="Full Release Coming Soon"
+        subtitle="Get ready for the complete WatcherMy experience with advanced screen sharing and Gypbit integration."
+      />
       
       {/* CTA Section */}
       <section className="py-24 px-6 md:px-10">
